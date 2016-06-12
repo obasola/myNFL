@@ -1,0 +1,28 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'DraftRound' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'draftRound.id' | translate }}</th>
+						<th>{{ 'draftRound.roundNbr' | translate }}</th>
+						<th>{{ 'draftRound.playerName' | translate }}</th>
+						<th>{{ 'draftRound.playerPosition' | translate }}</th>
+						<th>{{ 'draftRound.playerAnalysis' | translate }}</th>
+						<th><a class="btn btn-info" href='#/draftRound/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="draftRound in draftRounds">
+						<td>{{draftRound.id}}</td>
+						<td>{{draftRound.roundNbr | number }}</td>
+						<td>{{draftRound.playerName}}</td>
+						<td>{{draftRound.playerPosition}}</td>
+						<td>{{draftRound.playerAnalysis}}</td>
+						<td><a class="btn btn-info" href="#/draftRound/{{draftRound.id}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

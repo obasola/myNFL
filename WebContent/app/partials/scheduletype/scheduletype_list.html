@@ -1,0 +1,24 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'ScheduleType' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'scheduleType.id' | translate }}</th>
+						<th>{{ 'scheduleType.code' | translate }}</th>
+						<th>{{ 'scheduleType.description' | translate }}</th>
+						<th><a class="btn btn-info" href='#/scheduleType/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="scheduleType in scheduleTypes">
+						<td>{{scheduleType.id}}</td>
+						<td>{{scheduleType.code}}</td>
+						<td>{{scheduleType.description}}</td>
+						<td><a class="btn btn-info" href="#/scheduleType/{{scheduleType.id}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

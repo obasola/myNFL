@@ -1,0 +1,40 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Status' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="status_id" class="col-sm-2 control-label">{{ 'status.id' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="status_id" name="id" ng-model="status.id" class="form-control" maxLength="11"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="status_code" class="col-sm-2 control-label">{{ 'status.code' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="status_code" name="code" ng-model="status.code" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="status_name" class="col-sm-2 control-label">{{ 'status.name' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="status_name" name="name" ng-model="status.name" class="form-control" maxLength="45" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(status.id)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/status">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

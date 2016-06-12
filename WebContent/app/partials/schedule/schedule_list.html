@@ -1,0 +1,34 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Schedule' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'schedule.id' | translate }}</th>
+						<th>{{ 'schedule.year' | translate }}</th>
+						<th>{{ 'schedule.gamedate' | translate }}</th>
+						<th>{{ 'schedule.gamelocation' | translate }}</th>
+						<th>{{ 'schedule.opponent' | translate }}</th>
+						<th>{{ 'schedule.opponentScore' | translate }}</th>
+						<th>{{ 'schedule.teamScore' | translate }}</th>
+						<th>{{ 'schedule.outcome' | translate }}</th>
+						<th><a class="btn btn-info" href='#/schedule/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="schedule in schedules">
+						<td>{{schedule.id}}</td>
+						<td>{{schedule.year}}</td>
+						<td>{{schedule.gamedate}}</td>
+						<td>{{schedule.gamelocation}}</td>
+						<td>{{schedule.opponent}}</td>
+						<td>{{schedule.opponentScore | number }}</td>
+						<td>{{schedule.teamScore | number }}</td>
+						<td>{{schedule.outcome}}</td>
+						<td><a class="btn btn-info" href="#/schedule/{{schedule.id}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

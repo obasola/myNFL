@@ -1,0 +1,88 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Player' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="player_id" class="col-sm-2 control-label">{{ 'player.id' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="player_id" name="id" ng-model="player.id" class="form-control" maxLength="11"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="player_firstName" class="col-sm-2 control-label">{{ 'player.firstName' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="player_firstName" name="firstName" ng-model="player.firstName" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="player_lastName" class="col-sm-2 control-label">{{ 'player.lastName' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="player_lastName" name="lastName" ng-model="player.lastName" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="player_dateOfBirth" class="col-sm-2 control-label">{{ 'player.dateOfBirth' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="player_dateOfBirth" bs-datepicker data-autoclose="1" ng-model="player.dateOfBirth" name="dateOfBirth" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="player_college" class="col-sm-2 control-label">{{ 'player.college' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="player_college" name="college" ng-model="player.college" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="player_draftPosition" class="col-sm-2 control-label">{{ 'player.draftPosition' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="player_draftPosition" name="draftPosition" ng-model="player.draftPosition" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="player_yearSelected" class="col-sm-2 control-label">{{ 'player.yearSelected' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="player_yearSelected" name="yearSelected" ng-model="player.yearSelected" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="player_dateSigned" class="col-sm-2 control-label">{{ 'player.dateSigned' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="player_dateSigned" bs-datepicker data-autoclose="1" ng-model="player.dateSigned" name="dateSigned" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="player_playerPositionId" class="col-sm-2 control-label">{{ 'player.playerPositionId' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="player_playerPositionId" ng-model="player.playerPositionId" name="playerPositionId" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="playerPosition in items.playerPositions" title="{{playerPosition.label}}" ng-selected="{{playerPosition.value == player.playerPositionId}}" value="{{playerPosition.value}}">{{playerPosition.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="player_teamId" class="col-sm-2 control-label">{{ 'player.teamId' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="player_teamId" ng-model="player.teamId" name="teamId" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="team in items.teams" title="{{team.label}}" ng-selected="{{team.value == player.teamId}}" value="{{team.value}}">{{team.label}}</option>
+                    </select>
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(player.id)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/player">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

@@ -1,0 +1,121 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'PlayerStat' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="playerStat_id" class="col-sm-2 control-label">{{ 'playerStat.id' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_id" name="id" ng-model="playerStat.id" class="form-control" maxLength="11"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_playerType" class="col-sm-2 control-label">{{ 'playerStat.playerType' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_playerType" name="playerType" ng-model="playerStat.playerType" class="form-control" maxLength="2" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_rushingAttempts" class="col-sm-2 control-label">{{ 'playerStat.rushingAttempts' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_rushingAttempts" name="rushingAttempts" ng-model="playerStat.rushingAttempts" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_passingAttempts" class="col-sm-2 control-label">{{ 'playerStat.passingAttempts' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_passingAttempts" name="passingAttempts" ng-model="playerStat.passingAttempts" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_passingCompletions" class="col-sm-2 control-label">{{ 'playerStat.passingCompletions' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_passingCompletions" name="passingCompletions" ng-model="playerStat.passingCompletions" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_yardsPerCarry" class="col-sm-2 control-label">{{ 'playerStat.yardsPerCarry' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_yardsPerCarry" name="yardsPerCarry" ng-model="playerStat.yardsPerCarry" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_yardsPerPass" class="col-sm-2 control-label">{{ 'playerStat.yardsPerPass' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_yardsPerPass" name="yardsPerPass" ng-model="playerStat.yardsPerPass" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_yardsPerCatch" class="col-sm-2 control-label">{{ 'playerStat.yardsPerCatch' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_yardsPerCatch" name="yardsPerCatch" ng-model="playerStat.yardsPerCatch" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_touchdowns" class="col-sm-2 control-label">{{ 'playerStat.touchdowns' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_touchdowns" name="touchdowns" ng-model="playerStat.touchdowns" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_nbrInterceptions" class="col-sm-2 control-label">{{ 'playerStat.nbrInterceptions' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_nbrInterceptions" name="nbrInterceptions" ng-model="playerStat.nbrInterceptions" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_nbrTackles" class="col-sm-2 control-label">{{ 'playerStat.nbrTackles' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_nbrTackles" name="nbrTackles" ng-model="playerStat.nbrTackles" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_nbrSacks" class="col-sm-2 control-label">{{ 'playerStat.nbrSacks' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_nbrSacks" name="nbrSacks" ng-model="playerStat.nbrSacks" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_nbrAssists" class="col-sm-2 control-label">{{ 'playerStat.nbrAssists' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_nbrAssists" name="nbrAssists" ng-model="playerStat.nbrAssists" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_playerId" class="col-sm-2 control-label">{{ 'playerStat.playerId' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="playerStat_playerId" ng-model="playerStat.playerId" name="playerId" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="player in items.players" title="{{player.label}}" ng-selected="{{player.value == playerStat.playerId}}" value="{{player.value}}">{{player.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_opponent" class="col-sm-2 control-label">{{ 'playerStat.opponent' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="playerStat_opponent" name="opponent" ng-model="playerStat.opponent" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="playerStat_gameDate" class="col-sm-2 control-label">{{ 'playerStat.gameDate' | translate }}</label>
+				<div class="col-sm-10">
+					<input id="playerStat_gameDate" bs-datepicker data-autoclose="1" ng-model="playerStat.gameDate" name="gameDate" class="form-control" />
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(playerStat.id)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/playerStat">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

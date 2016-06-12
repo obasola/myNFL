@@ -1,0 +1,52 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'TeamStat' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'teamStat.id' | translate }}</th>
+						<th>{{ 'teamStat.won' | translate }}</th>
+						<th>{{ 'teamStat.lost' | translate }}</th>
+						<th>{{ 'teamStat.tied' | translate }}</th>
+						<th>{{ 'teamStat.percent' | translate }}</th>
+						<th>{{ 'teamStat.pointsForced' | translate }}</th>
+						<th>{{ 'teamStat.pointsAllowed' | translate }}</th>
+						<th>{{ 'teamStat.netPints' | translate }}</th>
+						<th>{{ 'teamStat.touchdowns' | translate }}</th>
+						<th>{{ 'teamStat.homeRecord' | translate }}</th>
+						<th>{{ 'teamStat.roadRecord' | translate }}</th>
+						<th>{{ 'teamStat.divisionRecord' | translate }}</th>
+						<th>{{ 'teamStat.conferenceRecord' | translate }}</th>
+						<th>{{ 'teamStat.playerStatscol' | translate }}</th>
+						<th>{{ 'teamStat.overallPercent' | translate }}</th>
+						<th>{{ 'teamStat.streak' | translate }}</th>
+						<th>{{ 'teamStat.lastFive' | translate }}</th>
+						<th><a class="btn btn-info" href='#/teamStat/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="teamStat in teamStats">
+						<td>{{teamStat.id}}</td>
+						<td>{{teamStat.won | number }}</td>
+						<td>{{teamStat.lost | number }}</td>
+						<td>{{teamStat.tied | number }}</td>
+						<td>{{teamStat.percent}}</td>
+						<td>{{teamStat.pointsForced | number }}</td>
+						<td>{{teamStat.pointsAllowed | number }}</td>
+						<td>{{teamStat.netPints | number }}</td>
+						<td>{{teamStat.touchdowns | number }}</td>
+						<td>{{teamStat.homeRecord}}</td>
+						<td>{{teamStat.roadRecord}}</td>
+						<td>{{teamStat.divisionRecord}}</td>
+						<td>{{teamStat.conferenceRecord}}</td>
+						<td>{{teamStat.playerStatscol}}</td>
+						<td>{{teamStat.overallPercent}}</td>
+						<td>{{teamStat.streak}}</td>
+						<td>{{teamStat.lastFive}}</td>
+						<td><a class="btn btn-info" href="#/teamStat/{{teamStat.id}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

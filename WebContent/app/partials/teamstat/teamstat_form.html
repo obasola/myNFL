@@ -1,0 +1,133 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'TeamStat' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="teamStat_id" class="col-sm-2 control-label">{{ 'teamStat.id' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_id" name="id" ng-model="teamStat.id" class="form-control" maxLength="11"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_won" class="col-sm-2 control-label">{{ 'teamStat.won' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_won" name="won" ng-model="teamStat.won" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_lost" class="col-sm-2 control-label">{{ 'teamStat.lost' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_lost" name="lost" ng-model="teamStat.lost" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_tied" class="col-sm-2 control-label">{{ 'teamStat.tied' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_tied" name="tied" ng-model="teamStat.tied" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_percent" class="col-sm-2 control-label">{{ 'teamStat.percent' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_percent" name="percent" ng-model="teamStat.percent" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_pointsForced" class="col-sm-2 control-label">{{ 'teamStat.pointsForced' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_pointsForced" name="pointsForced" ng-model="teamStat.pointsForced" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_pointsAllowed" class="col-sm-2 control-label">{{ 'teamStat.pointsAllowed' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_pointsAllowed" name="pointsAllowed" ng-model="teamStat.pointsAllowed" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_netPints" class="col-sm-2 control-label">{{ 'teamStat.netPints' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_netPints" name="netPints" ng-model="teamStat.netPints" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_touchdowns" class="col-sm-2 control-label">{{ 'teamStat.touchdowns' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_touchdowns" name="touchdowns" ng-model="teamStat.touchdowns" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_homeRecord" class="col-sm-2 control-label">{{ 'teamStat.homeRecord' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_homeRecord" name="homeRecord" ng-model="teamStat.homeRecord" class="form-control" maxLength="5" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_roadRecord" class="col-sm-2 control-label">{{ 'teamStat.roadRecord' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_roadRecord" name="roadRecord" ng-model="teamStat.roadRecord" class="form-control" maxLength="5" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_divisionRecord" class="col-sm-2 control-label">{{ 'teamStat.divisionRecord' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_divisionRecord" name="divisionRecord" ng-model="teamStat.divisionRecord" class="form-control" maxLength="5" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_conferenceRecord" class="col-sm-2 control-label">{{ 'teamStat.conferenceRecord' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_conferenceRecord" name="conferenceRecord" ng-model="teamStat.conferenceRecord" class="form-control" maxLength="5" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_playerStatscol" class="col-sm-2 control-label">{{ 'teamStat.playerStatscol' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_playerStatscol" name="playerStatscol" ng-model="teamStat.playerStatscol" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_overallPercent" class="col-sm-2 control-label">{{ 'teamStat.overallPercent' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_overallPercent" name="overallPercent" ng-model="teamStat.overallPercent" class="form-control" maxLength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_streak" class="col-sm-2 control-label">{{ 'teamStat.streak' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_streak" name="streak" ng-model="teamStat.streak" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_lastFive" class="col-sm-2 control-label">{{ 'teamStat.lastFive' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="teamStat_lastFive" name="lastFive" ng-model="teamStat.lastFive" class="form-control" maxLength="5" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="teamStat_teamId" class="col-sm-2 control-label">{{ 'teamStat.teamId' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="teamStat_teamId" ng-model="teamStat.teamId" name="teamId" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="team in items.teams" title="{{team.label}}" ng-selected="{{team.value == teamStat.teamId}}" value="{{team.value}}">{{team.label}}</option>
+                    </select>
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(teamStat.id)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/teamStat">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

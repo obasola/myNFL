@@ -1,0 +1,22 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Draft' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'draft.id' | translate }}</th>
+						<th>{{ 'draft.year' | translate }}</th>
+						<th><a class="btn btn-info" href='#/draft/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="draft in drafts">
+						<td>{{draft.id}}</td>
+						<td>{{draft.year | number }}</td>
+						<td><a class="btn btn-info" href="#/draft/{{draft.id}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

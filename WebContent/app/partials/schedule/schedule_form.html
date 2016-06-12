@@ -1,0 +1,88 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'Schedule' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="schedule_id" class="col-sm-2 control-label">{{ 'schedule.id' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="schedule_id" name="id" ng-model="schedule.id" class="form-control" maxLength="11"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="schedule_year" class="col-sm-2 control-label">{{ 'schedule.year' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="schedule_year" name="year" ng-model="schedule.year" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="schedule_gamedate" class="col-sm-2 control-label">{{ 'schedule.gamedate' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="schedule_gamedate" name="gamedate" ng-model="schedule.gamedate" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="schedule_gamelocation" class="col-sm-2 control-label">{{ 'schedule.gamelocation' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="schedule_gamelocation" name="gamelocation" ng-model="schedule.gamelocation" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="schedule_opponent" class="col-sm-2 control-label">{{ 'schedule.opponent' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="schedule_opponent" name="opponent" ng-model="schedule.opponent" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="schedule_opponentScore" class="col-sm-2 control-label">{{ 'schedule.opponentScore' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="schedule_opponentScore" name="opponentScore" ng-model="schedule.opponentScore" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="schedule_teamScore" class="col-sm-2 control-label">{{ 'schedule.teamScore' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="schedule_teamScore" name="teamScore" ng-model="schedule.teamScore" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="schedule_outcome" class="col-sm-2 control-label">{{ 'schedule.outcome' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="schedule_outcome" name="outcome" ng-model="schedule.outcome" class="form-control" maxLength="1" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="schedule_scheduleTypeId" class="col-sm-2 control-label">{{ 'schedule.scheduleTypeId' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="schedule_scheduleTypeId" ng-model="schedule.scheduleTypeId" name="scheduleTypeId" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="scheduleType in items.scheduleTypes" title="{{scheduleType.label}}" ng-selected="{{scheduleType.value == schedule.scheduleTypeId}}" value="{{scheduleType.value}}">{{scheduleType.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="schedule_teamId" class="col-sm-2 control-label">{{ 'schedule.teamId' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="schedule_teamId" ng-model="schedule.teamId" name="teamId" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="team in items.teams" title="{{team.label}}" ng-selected="{{team.value == schedule.teamId}}" value="{{team.value}}">{{team.label}}</option>
+                    </select>
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(schedule.id)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/schedule">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

@@ -1,0 +1,48 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'PlayerStat' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'playerStat.id' | translate }}</th>
+						<th>{{ 'playerStat.playerType' | translate }}</th>
+						<th>{{ 'playerStat.rushingAttempts' | translate }}</th>
+						<th>{{ 'playerStat.passingAttempts' | translate }}</th>
+						<th>{{ 'playerStat.passingCompletions' | translate }}</th>
+						<th>{{ 'playerStat.yardsPerCarry' | translate }}</th>
+						<th>{{ 'playerStat.yardsPerPass' | translate }}</th>
+						<th>{{ 'playerStat.yardsPerCatch' | translate }}</th>
+						<th>{{ 'playerStat.touchdowns' | translate }}</th>
+						<th>{{ 'playerStat.nbrInterceptions' | translate }}</th>
+						<th>{{ 'playerStat.nbrTackles' | translate }}</th>
+						<th>{{ 'playerStat.nbrSacks' | translate }}</th>
+						<th>{{ 'playerStat.nbrAssists' | translate }}</th>
+						<th>{{ 'playerStat.opponent' | translate }}</th>
+						<th>{{ 'playerStat.gameDate' | translate }}</th>
+						<th><a class="btn btn-info" href='#/playerStat/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="playerStat in playerStats">
+						<td>{{playerStat.id}}</td>
+						<td>{{playerStat.playerType}}</td>
+						<td>{{playerStat.rushingAttempts | number }}</td>
+						<td>{{playerStat.passingAttempts | number }}</td>
+						<td>{{playerStat.passingCompletions}}</td>
+						<td>{{playerStat.yardsPerCarry}}</td>
+						<td>{{playerStat.yardsPerPass}}</td>
+						<td>{{playerStat.yardsPerCatch}}</td>
+						<td>{{playerStat.touchdowns | number }}</td>
+						<td>{{playerStat.nbrInterceptions | number }}</td>
+						<td>{{playerStat.nbrTackles}}</td>
+						<td>{{playerStat.nbrSacks}}</td>
+						<td>{{playerStat.nbrAssists}}</td>
+						<td>{{playerStat.opponent}}</td>
+						<td>{{playerStat.gameDate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/playerStat/{{playerStat.id}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

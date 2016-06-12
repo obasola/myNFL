@@ -1,0 +1,34 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Player' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'player.id' | translate }}</th>
+						<th>{{ 'player.firstName' | translate }}</th>
+						<th>{{ 'player.lastName' | translate }}</th>
+						<th>{{ 'player.dateOfBirth' | translate }}</th>
+						<th>{{ 'player.college' | translate }}</th>
+						<th>{{ 'player.draftPosition' | translate }}</th>
+						<th>{{ 'player.yearSelected' | translate }}</th>
+						<th>{{ 'player.dateSigned' | translate }}</th>
+						<th><a class="btn btn-info" href='#/player/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="player in players">
+						<td>{{player.id}}</td>
+						<td>{{player.firstName}}</td>
+						<td>{{player.lastName}}</td>
+						<td>{{player.dateOfBirth | date:'shortDate'}}</td>
+						<td>{{player.college}}</td>
+						<td>{{player.draftPosition}}</td>
+						<td>{{player.yearSelected | number }}</td>
+						<td>{{player.dateSigned | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/player/{{player.id}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

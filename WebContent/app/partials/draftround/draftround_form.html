@@ -1,0 +1,61 @@
+	<fieldset class="col-sm-12 bordure">
+		<legend class="legende">{{ 'DraftRound' | translate }}</legend>
+		
+		<div ng-include src="'partials/message-include.html'"></div>
+   		
+		<form class="well form-horizontal">
+			<div class="form-group">
+				<label for="draftRound_id" class="col-sm-2 control-label">{{ 'draftRound.id' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="draftRound_id" name="id" ng-model="draftRound.id" class="form-control" maxLength="11"  ng-disabled="mode != 'create'"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="draftRound_roundNbr" class="col-sm-2 control-label">{{ 'draftRound.roundNbr' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="draftRound_roundNbr" name="roundNbr" ng-model="draftRound.roundNbr" class="form-control" maxLength="11" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="draftRound_playerName" class="col-sm-2 control-label">{{ 'draftRound.playerName' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="draftRound_playerName" name="playerName" ng-model="draftRound.playerName" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="draftRound_draftTeamId" class="col-sm-2 control-label">{{ 'draftRound.draftTeamId' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="draftRound_draftTeamId" ng-model="draftRound.draftTeamId" name="draftTeamId" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="draftTeam in items.draftTeams" title="{{draftTeam.label}}" ng-selected="{{draftTeam.value == draftRound.draftTeamId}}" value="{{draftTeam.value}}">{{draftTeam.label}}</option>
+                    </select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="draftRound_playerPosition" class="col-sm-2 control-label">{{ 'draftRound.playerPosition' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="draftRound_playerPosition" name="playerPosition" ng-model="draftRound.playerPosition" class="form-control" maxLength="45" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="draftRound_playerAnalysis" class="col-sm-2 control-label">{{ 'draftRound.playerAnalysis' | translate }}</label>
+				<div class="col-sm-10">
+					<textarea id="draftRound_playerAnalysis" name="playerAnalysis" ng-model="draftRound.playerAnalysis" class="form-control" ></textarea>
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(draftRound.id)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/draftRound">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+    </fieldset>

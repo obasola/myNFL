@@ -1,0 +1,28 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'PlayerStatus' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'playerStatus.id' | translate }}</th>
+						<th>{{ 'playerStatus.statusId' | translate }}</th>
+						<th>{{ 'playerStatus.code' | translate }}</th>
+						<th>{{ 'playerStatus.name' | translate }}</th>
+						<th>{{ 'playerStatus.description' | translate }}</th>
+						<th><a class="btn btn-info" href='#/playerStatus/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="playerStatus in playerStatuss">
+						<td>{{playerStatus.id}}</td>
+						<td>{{playerStatus.statusId}}</td>
+						<td>{{playerStatus.code}}</td>
+						<td>{{playerStatus.name}}</td>
+						<td>{{playerStatus.description}}</td>
+						<td><a class="btn btn-info" href="#/playerStatus/{{playerStatus.id}}/{{playerStatus.statusId}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>
