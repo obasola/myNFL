@@ -16,165 +16,170 @@
 </head>
 <body>
 
-  <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+  <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2" ng-controller="appController">
 
     <md-toolbar layout="row" class="md-whiteframe-z1">
-      <md-button id="main" class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
-        <md-icon md-svg-icon="menu" ></md-icon>
-      </md-button>
-      <img src="img/football-icon.png" alt="" />
-      <h3>NFL darftTracker</h3>
+	      <md-button id="main" class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+	        <md-icon md-svg-icon="menu" ></md-icon>
+	      </md-button>
+ 
+	     <a ui-sref="conference">
+	     		 <img src="img/football-icon.png" alt="" />
+	     </a>
+	      <h3>My NFL Experience</h3>
     </md-toolbar>
     <div>
-    <md-menu-bar>
-      <md-menu>
-        <button ng-click="$mdOpenMenu()">
-          <i class="fa fa-align-right"></i> Divisions
-        </button>
-        <md-menu-content>
+	    <span flex></span>
+	    <md-menu-bar>
+
+	      <md-menu>
+	        <button ng-click="$mdOpenMenu()">
+	          <i class="fa fa-align-right"></i> Divisions
+	        </button>
+	        <md-menu-content>
 
 
-          <md-menu-item>
-            <md-menu>
-              <md-button ng-click="$mdOpenMenu()">AFC North</md-button>
-              <md-menu-content>
-                <md-menu-item><md-button ng-click="showTeamHomePage('ravens')">Baltimore Ravens</md-button></md-menu-item>
-                <md-menu-item><md-button ng-click="showTeamHomePage('bengals')">Cincinnati Bengals</md-button></md-menu-item>
-                <md-menu-item><md-button ng-click="showTeamHomePage('browns')">Cleveland Browns</md-button></md-menu-item>
-                <md-menu-item><md-button ng-click="showTeamHomePage('steelers')">Pittsburgh Steelers</md-button></md-menu-item>
-              </md-menu-content>
-            </md-menu>
-          </md-menu-item>
+	          <md-menu-item>
+	            <md-menu>
+	              <md-button ng-click="$mdOpenMenu()">AFC North</md-button>
+	              <md-menu-content>
+	                <md-menu-item><md-button ng-click="showTeamHomePage('ravens')">Baltimore Ravens</md-button></md-menu-item>
+	                <md-menu-item><md-button ng-click="showTeamHomePage('bengals')">Cincinnati Bengals</md-button></md-menu-item>
+	                <md-menu-item><md-button ng-click="showTeamHomePage('browns')">Cleveland Browns</md-button></md-menu-item>
+	                <md-menu-item><md-button ng-click="showTeamHomePage('steelers')">Pittsburgh Steelers</md-button></md-menu-item>
+	              </md-menu-content>
+	            </md-menu>
+	          </md-menu-item>
 
-          <md-menu>
-            <md-button ng-click="$mdOpenMenu()">AFC South</md-button>
-            <md-menu-content>
-              <md-menu-item><md-button ng-click="showTeamHomePage('texans')">Houston Texans</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('colts')">Indianapolis Colts</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('jaguars')">Jacksonville Jaguars</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('titans')">Tennessee Titans</md-button></md-menu-item>
-            </md-menu-content>
-          </md-menu>
+	          <md-menu>
+	            <md-button ng-click="$mdOpenMenu()">AFC South</md-button>
+	            <md-menu-content>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('texans')">Houston Texans</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('colts')">Indianapolis Colts</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('jaguars')">Jacksonville Jaguars</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('titans')">Tennessee Titans</md-button></md-menu-item>
+	            </md-menu-content>
+	          </md-menu>
 
-          <md-menu>
-            <md-button ng-click="$mdOpenMenu()">AFC East</md-button>
-            <md-menu-content>
-              <md-menu-item><md-button ng-click="showTeamHomePage('bills')">Buffalo Bills</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('dolphins')">Miami Dolphins</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('patriots')">New England Patriots</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('jets')">New York Jets</md-button></md-menu-item>
-            </md-menu-content>
-          </md-menu>
+	          <md-menu>
+	            <md-button ng-click="$mdOpenMenu()">AFC East</md-button>
+	            <md-menu-content>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('bills')">Buffalo Bills</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('dolphins')">Miami Dolphins</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('patriots')">New England Patriots</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('jets')">New York Jets</md-button></md-menu-item>
+	            </md-menu-content>
+	          </md-menu>
 
-          <md-menu>
-            <md-button ng-click="$mdOpenMenu()">AFC West</md-button>
-            <md-menu-content>
-              <md-menu-item><md-button ng-click="showTeamHomePage('broncos')">Denver Broncos</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('chiefs')">Kansas City Chiefs</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('raiders')">Oakland Raiders</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('chargers')">San Diego Chargers</md-button></md-menu-item>
-            </md-menu-content>
-          </md-menu>
+	          <md-menu>
+	            <md-button ng-click="$mdOpenMenu()">AFC West</md-button>
+	            <md-menu-content>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('broncos')">Denver Broncos</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('chiefs')">Kansas City Chiefs</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('raiders')">Oakland Raiders</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('chargers')">San Diego Chargers</md-button></md-menu-item>
+	            </md-menu-content>
+	          </md-menu>
 
-          <md-menu-divider></md-menu-divider>
-          <md-menu>
-            <md-button ng-click="$mdOpenMenu()">NFC North</md-button>
-            <md-menu-content>
-              <md-menu-item><md-button ng-click="showTeamHomePage('bears')">Chicago Bears</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('lions')">Detriot Lions</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('packers')">Green Bay Packers</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('vikings')">Minnesota Vikings</md-button></md-menu-item>
-            </md-menu-content>
-          </md-menu>
+	          <md-menu-divider></md-menu-divider>
+	          <md-menu>
+	            <md-button ng-click="$mdOpenMenu()">NFC North</md-button>
+	            <md-menu-content>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('bears')">Chicago Bears</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('lions')">Detriot Lions</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('packers')">Green Bay Packers</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('vikings')">Minnesota Vikings</md-button></md-menu-item>
+	            </md-menu-content>
+	          </md-menu>
 
-          <md-menu>
-            <md-button ng-click="$mdOpenMenu()">NFC South</md-button>
-            <md-menu-content>
-              <md-menu-item><md-button ng-click="showTeamHomePage('falcons')">Atlanta Falcons</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('panthers')">Carolina Panthers</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('saints')">New Orleans Saints</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('buccaneers')">Tampa Bay Buccaneers</md-button></md-menu-item>
-            </md-menu-content>
-          </md-menu>
+	          <md-menu>
+	            <md-button ng-click="$mdOpenMenu()">NFC South</md-button>
+	            <md-menu-content>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('falcons')">Atlanta Falcons</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('panthers')">Carolina Panthers</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('saints')">New Orleans Saints</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('buccaneers')">Tampa Bay Buccaneers</md-button></md-menu-item>
+	            </md-menu-content>
+	          </md-menu>
 
-          <md-menu>
-            <md-button ng-click="$mdOpenMenu()">NFC East</md-button>
-            <md-menu-content>
-              <md-menu-item><md-button ng-click="showTeamHomePage('cowboys')">Dallas Cowboys</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('giants')">New York Giants</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('eagles')">Philidelphia Eagles</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('redskins')">Washington Redskins</md-button></md-menu-item>
-            </md-menu-content>
-          </md-menu>
+	          <md-menu>
+	            <md-button ng-click="$mdOpenMenu()">NFC East</md-button>
+	            <md-menu-content>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('cowboys')">Dallas Cowboys</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('giants')">New York Giants</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('eagles')">Philidelphia Eagles</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('redskins')">Washington Redskins</md-button></md-menu-item>
+	            </md-menu-content>
+	          </md-menu>
 
-          <md-menu>
-            <md-button ng-click="$mdOpenMenu()">NFC West</md-button>
-            <md-menu-content>
-              <md-menu-item><md-button ng-click="showTeamHomePage('cardinals')">Arizona Cardinals</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('rams')">Los Angeles Rams</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('49ers')">San Francisco 49ers</md-button></md-menu-item>
-              <md-menu-item><md-button ng-click="showTeamHomePage('seahaw')">Seattle Seahawks</md-button></md-menu-item>
-            </md-menu-content>
-          </md-menu>
-        </md-menu-content>
-      </md-menu>
+	          <md-menu>
+	            <md-button ng-click="$mdOpenMenu()">NFC West</md-button>
+	            <md-menu-content>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('cardinals')">Arizona Cardinals</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('rams')">Los Angeles Rams</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('49ers')">San Francisco 49ers</md-button></md-menu-item>
+	              <md-menu-item><md-button ng-click="showTeamHomePage('seahaw')">Seattle Seahawks</md-button></md-menu-item>
+	            </md-menu-content>
+	          </md-menu>
+	        </md-menu-content>
+	      </md-menu>
 
-      <md-menu>
-        <button ng-click="$mdOpenMenu()">
-            <i class="fa fa-binoculars"></i>Prospects
-        </button>
-        <md-menu-content>
-          <md-menu-item><md-button ng-click="showProspects('cb')">Cornerbacks</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showProspects('dend')">Defensive Ends</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showPropects('dtackle')">Defensive Tackles</md-button></md-menu-item>
-          <md-menu-divider></md-menu-divider>
-          <md-menu-item><md-button ng-click="showProspects('oline')">Offensive Linemen</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showProspects('rb')">Runningbacks</md-button></md-menu-item>
-          <md-menu-divider></md-menu-divider>
-          <md-menu-item><md-button ng-click="showProspects('qb')">Quarterbacks</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showProspects('featureReceivers')">Receivers - Feature</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showProspects('speedReceiver')">Receivers - Speed</md-button></md-menu-item>
+	      <md-menu>
+	        <button ng-click="$mdOpenMenu()">
+	            <i class="fa fa-binoculars"></i>Prospects
+	        </button>
+	        <md-menu-content>
+	          <md-menu-item><md-button ng-click="showProspects('cb')">Cornerbacks</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showProspects('dend')">Defensive Ends</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showPropects('dtackle')">Defensive Tackles</md-button></md-menu-item>
+	          <md-menu-divider></md-menu-divider>
+	          <md-menu-item><md-button ng-click="showProspects('oline')">Offensive Linemen</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showProspects('rb')">Runningbacks</md-button></md-menu-item>
+	          <md-menu-divider></md-menu-divider>
+	          <md-menu-item><md-button ng-click="showProspects('qb')">Quarterbacks</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showProspects('featureReceivers')">Receivers - Feature</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showProspects('speedReceiver')">Receivers - Speed</md-button></md-menu-item>
 
-        </md-menu-content>
-      </md-menu>
-      <md-menu>
-        <button ng-click="$mdOpenMenu()">
-            <i class="fa fa-edit"></i>Mocks
-        </button>
-        <md-menu-content>
-          <md-menu-item><md-button ng-click="showMockRound('1')">Round 1</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showMockRound('2')">Round 2</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showMockRound('3')">Round 3</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showMockRound('4')">Round 4</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showMockRound('5')">Round 5</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showMockRound('6')">Round 6</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showMockRound('7')">Round 7</md-button></md-menu-item>
-        </md-menu-content>
-      </md-menu>
-      <md-menu>
-        <button ng-click="$mdOpenMenu()">
-            <i class="fa fa-edit"></i>Draft
-        </button>
-        <md-menu-content>
-          <md-menu-item><md-button ng-click="showDraftRound('1')">Round 1</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showDraftRound('2')">Round 2</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showDraftRound('3')">Round 3</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showDraftRound('4')">Round 4</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showDraftRound('5')">Round 5</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showDraftRound('6')">Round 6</md-button></md-menu-item>
-          <md-menu-item><md-button ng-click="showDraftRound('7')">Round 7</md-button></md-menu-item>
-        </md-menu-content>
-      </md-menu>
-    </md-menu-bar>
+	        </md-menu-content>
+	      </md-menu>
+	      <md-menu>
+	        <button ng-click="$mdOpenMenu()">
+	            <i class="fa fa-edit"></i>Mocks
+	        </button>
+	        <md-menu-content>
+	          <md-menu-item><md-button ng-click="showMockRound('1')">Round 1</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showMockRound('2')">Round 2</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showMockRound('3')">Round 3</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showMockRound('4')">Round 4</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showMockRound('5')">Round 5</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showMockRound('6')">Round 6</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showMockRound('7')">Round 7</md-button></md-menu-item>
+	        </md-menu-content>
+	      </md-menu>
+	      <md-menu>
+	        <button ng-click="$mdOpenMenu()">
+	            <i class="fa fa-edit"></i>Draft
+	        </button>
+	        <md-menu-content>
+	          <md-menu-item><md-button ng-click="showDraftRound('1')">Round 1</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showDraftRound('2')">Round 2</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showDraftRound('3')">Round 3</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showDraftRound('4')">Round 4</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showDraftRound('5')">Round 5</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showDraftRound('6')">Round 6</md-button></md-menu-item>
+	          <md-menu-item><md-button ng-click="showDraftRound('7')">Round 7</md-button></md-menu-item>
+	        </md-menu-content>
+	      </md-menu>
+	    </md-menu-bar>
 
 
-    <md-content flex id="content">
-        <div ng-view></div>
-	  	<div><span data-translate="app.version"></span>&nbsp;<span data-app-version></span></div>
-    </md-content>
+	    <md-content flex id="content">
+	        <div ui-view></div>
+		  	<div><span data-translate="app.version"></span>&nbsp;<span data-app-version></span></div>
+	    </md-content>
 
   </div>
-	
+
 
 	<!-- javascript -->
 	<script src="lib/moment-with-langs.js"></script>
@@ -186,6 +191,7 @@
   	-->
 	<script src="lib/angular/angular.js"></script>
 	<script src="lib/angular-route/angular-route.js"></script>
+	<script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
 	<script src="lib/angular-resource/angular-resource.js"></script>
 	<script src="lib/angular-cookies/angular-cookies.js"></script>
 	<script src="lib/angular-animate/angular-animate.js"></script>
