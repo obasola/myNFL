@@ -44,19 +44,19 @@ myApp.controller('appController',['$scope', '$state', function($scope,$state) {
     $state.go('home');
   };
   $scope.showTeamHomePage = function(teamName) {
-    
+
     $state.go('team');
   };
   $scope.showConference= function() {
-	    
+
 	    $state.go('conference');
 	  };
   $scope.showProspects = function(teamName) {
-    
+
     $state.go('player');
   };
   $scope.showMockRound = function(roundNumber) {
-    
+
     $state.go('draftRound');
   };
   $scope.showDraftRound = function(roundNumber) {
@@ -71,10 +71,8 @@ myApp.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$ur
   $stateProvider.state('home',{
     url:'/'
   })
-  .state('conference', {
-    url: '/conference',
-    templateUrl: 'partials/conference/conference_list.html'
-  })
+
+
   .state('draft', {
     url: '/draft',
     templateUrl: 'partials/draft/draft_list.html'
@@ -91,14 +89,8 @@ myApp.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$ur
     url: '/draftType',
     templateUrl: 'partials/drafttype/drafttype_list.html'
   })
-  .state('division', {
-    url: '/division',
-    templateUrl: 'partials/division/division_list.html'
-  })
-  .state('player', {
-    url: '/player',
-    templateUrl: 'partials/player/player_list.html'
-  })
+
+
   .state('playerPosition', {
     url: '/playerPosition',
     templateUrl: 'partials/playerposition/playerposition_list.html'

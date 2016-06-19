@@ -3,13 +3,14 @@
 		
 			<div ng-include src="'partials/message-include.html'"></div>
 			
-			<table class="table table-striped">
+			<table class="table table-striped" ng-controller="ConferenceCtrl">
 				<thead>
 					<tr>
 						<th>{{ 'conference.id' | translate }}</th>
 						<th>{{ 'conference.code' | translate }}</th>
 						<th>{{ 'conference.name' | translate }}</th>
-						<th><a class="btn btn-info" href='#/conference/new'>{{ 'create' | translate }}</a></th>
+						<th><a class="btn btn-info"  ui-sref='conferenceSetup'>{{ 'create' | translate }}</a> 
+									<a class="btn btn-info" ui-sref="refreshConferenceList()">Refresh</a></th>
 					</tr>
 				</thead>
 				<tbody>

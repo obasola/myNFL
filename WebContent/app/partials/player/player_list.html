@@ -27,7 +27,7 @@
 						<td>{{player.draftPosition}}</td>
 						<td>{{player.yearSelected | number }}</td>
 						<td>{{player.dateSigned | date:'shortDate'}}</td>
-						<td><a class="btn btn-info" href="#/player/{{player.id}}">{{ 'edit' | translate }}</a></td>
+						<td><a class="btn btn-info" ui-sref="playerDetails/{{player.id}}">{{ 'edit' | translate }}</a></td>
 					</tr>
 				</tbody>
 			</table>
